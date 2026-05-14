@@ -1,25 +1,13 @@
-CLASS zcl_dic_rpc DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZCL_DIC_RPC definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-    INTERFACES if_oo_adt_classrun .
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zcl_dic_rpc IMPLEMENTATION.
-  METHOD if_oo_adt_classrun~main.
-
-    DATA lv_cliente TYPE zde_cliente_rpc.
-
-    lv_cliente = 'Rebeca'.
-
-    out->write( lv_cliente ).
-
-  ENDMETHOD.
-
+CLASS ZCL_DIC_RPC IMPLEMENTATION.
 ENDCLASS.
