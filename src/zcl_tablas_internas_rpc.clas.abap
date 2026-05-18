@@ -13,6 +13,8 @@ ENDCLASS.
 
 
 CLASS zcl_tablas_internas_rpc IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -65,7 +67,10 @@ CLASS zcl_tablas_internas_rpc IMPLEMENTATION.
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-    "1. Tablas internas STANDARD"
+    "1. Tablas internas STANDARD" - Acceso lineal y NON-UNIQUE
+    "Usa poca memoria pero es poco eficiente para realizar búsquedas
+    "de registros en grandes BBDD.
+    "Uso: Tablas pequeñas sin necesidad de reordenación
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     TYPES:BEGIN OF ty_empleado,
             nombre   TYPE string,
@@ -75,6 +80,7 @@ CLASS zcl_tablas_internas_rpc IMPLEMENTATION.
           END OF ty_empleado.
 
     DATA ls_empleado TYPE ty_empleado.
+
     "1.1 A menos que se indique el tipo de tabla, será estándar
     "por defecto
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -83,13 +89,17 @@ CLASS zcl_tablas_internas_rpc IMPLEMENTATION.
 
 
     "2. Tablas internas SORTED - uso para acceder a la info
-    "Puede ser UNIQUE y NON-UNIQUE
+    "Aparecen ordenadas respecto a su clave (UNIQUE y NON-UNIQUE)
+    "Uso: Gran número de accesos
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     DATA lt_empleado_sorted TYPE SORTED TABLE OF ty_empleado WITH UNIQUE KEY correo.
 
 
-    "3. Tablas internas HASH - búsqueda rápida de información
-    "Solo puede ser UNIQUE
+    "3. Tablas internas HASH - Algorítmo numérico HASH function:
+    "Determina la pos de un registro partiendo de X clave (solo puede
+    "ser UNIQUE). Es la más veloz.
+    "Uso: La acción más frecuente es acceder a una línea por su clave
+    "Para acceder a grandes BBDD.
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     DATA lt_empleado_hashed TYPE HASHED TABLE OF  ty_empleado WITH UNIQUE KEY correo.
 
@@ -213,9 +223,10 @@ CLASS zcl_tablas_internas_rpc IMPLEMENTATION.
     INSERT LINES OF lt_empleado TO 1 INTO TABLE lt_empleado_fila.
 
 
-    "15. INSERT LINES FROM TO - Copiar un rango de filas en otra tabla
+    "15. INSERT / APPEND LINES FROM TO - Copiar un rango de filas en otra tabla
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     INSERT LINES OF lt_empleado FROM 2 TO 4 INTO TABLE lt_empleado_fila.
+    APPEND LINES OF lt_empleado FROM 2 TO 4 TO lt_empleado_fila.
 
 
     "16. APPEND - recomendado usar INSERT
@@ -238,6 +249,17 @@ CLASS zcl_tablas_internas_rpc IMPLEMENTATION.
     ( nombre = 'Juan' edad = 45 telefono = '+34111223344' correo = 'juan@gmail.com' )
     ( nombre = 'Santiago' edad = 27 telefono = '+34111223344' correo = 'santiago@gmail.com' )
     ).
+
+    "Muy lioso - usar la anterior
+    TYPES ty_tabla TYPE TABLE OF ty_empleado WITH EMPTY KEY.
+    DATA(lt_empleado_moderno2) = VALUE ty_tabla(
+    ( nombre = 'Marta' edad = 71 telefono = '+34111223344' correo = 'marta@gmail.com' )
+    ( nombre = 'Juan' edad = 45 telefono = '+34111223344' correo = 'juan@gmail.com' )
+    ( nombre = 'Santiago' edad = 27 telefono = '+34111223344' correo = 'santiago@gmail.com' )
+    ).
+
+
+
 
 
   ENDMETHOD.

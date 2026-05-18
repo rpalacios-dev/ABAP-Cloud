@@ -11,7 +11,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_estructura_rpc IMPLEMENTATION.
+CLASS ZCL_ESTRUCTURA_RPC IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
     "Explicación de estructuras
@@ -120,5 +122,4 @@ CLASS zcl_estructura_rpc IMPLEMENTATION.
     out->write( ls_mueble ).
 
   ENDMETHOD.
-
 ENDCLASS.

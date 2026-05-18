@@ -12,7 +12,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_ejercicio_estructura_rpc IMPLEMENTATION.
+CLASS ZCL_EJERCICIO_ESTRUCTURA_RPC IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
 

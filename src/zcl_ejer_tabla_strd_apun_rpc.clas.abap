@@ -12,7 +12,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_ejer_tabla_strd_apun_rpc IMPLEMENTATION.
+CLASS ZCL_EJER_TABLA_STRD_APUN_RPC IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

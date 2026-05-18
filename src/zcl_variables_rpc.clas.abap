@@ -11,7 +11,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_variables_rpc IMPLEMENTATION.
+CLASS ZCL_VARIABLES_RPC IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
 
@@ -81,5 +83,4 @@ CLASS zcl_variables_rpc IMPLEMENTATION.
 
 
   ENDMETHOD.
-
 ENDCLASS.

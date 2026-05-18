@@ -12,6 +12,8 @@ ENDCLASS.
 
 
 CLASS zcl_ejer_clase_tabla_rpc IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -119,5 +121,4 @@ CLASS zcl_ejer_clase_tabla_rpc IMPLEMENTATION.
 
 
   ENDMETHOD.
-
 ENDCLASS.

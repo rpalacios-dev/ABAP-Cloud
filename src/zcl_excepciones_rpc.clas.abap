@@ -12,7 +12,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_excepciones_rpc IMPLEMENTATION.
+CLASS ZCL_EXCEPCIONES_RPC IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
 * Declarations

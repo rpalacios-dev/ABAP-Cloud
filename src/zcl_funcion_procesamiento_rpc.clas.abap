@@ -12,7 +12,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_funcion_procesamiento_rpc IMPLEMENTATION.
+CLASS ZCL_FUNCION_PROCESAMIENTO_RPC IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
