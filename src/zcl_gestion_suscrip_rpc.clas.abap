@@ -10,12 +10,11 @@ CLASS zcl_gestion_suscrip_rpc DEFINITION
     """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     TYPES tt_suscripcion TYPE TABLE OF zdb_suscrip_rpc.
     METHODS constructor IMPORTING it_suscripcion TYPE tt_suscripcion.
-    METHODS crear_suscripcion IMPORTING iv_usuario            TYPE uname
-                                        iv_tipo_plan          TYPE zde_sub_tipo_rpc
-                                        iv_precio             TYPE zdb_suscrip_rpc-precio
+    METHODS crear_suscripcion IMPORTING iv_usuario               TYPE uname
+                                        iv_tipo_plan             TYPE zde_sub_tipo_rpc
+                                        iv_precio                TYPE zdb_suscrip_rpc-precio
                               RETURNING VALUE(rv_id_suscripcion) TYPE zde_sub_id_rpc.
-    METHODS modificar_estado IMPORTING iv_id_suscripcion TYPE zde_sub_id_rpc
-                                       iv_nuevo_estado   TYPE zde_sub_estado_rpc.
+    METHODS modificar_estado IMPORTING iv_id_suscripcion TYPE zde_sub_id_rpc.
     "Las tablas las exportamos a menos que tt forme parte del dic de datos
     "Así que usaré EXPORTING y no RETURNING VALUE
     METHODS obtener_activas EXPORTING et_suscripciones_activas TYPE tt_suscripcion.
@@ -56,8 +55,8 @@ CLASS zcl_gestion_suscrip_rpc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD modificar_estado.
-    "Comprobación de existencia del ID
 
+    "Comprobación de existencia del ID
     LOOP AT mt_suscripcion INTO DATA(ls_suscripcion).
       IF iv_id_suscripcion EQ ls_suscripcion-id_suscrip.
         "En caso de existir, cambio de estado
@@ -75,12 +74,14 @@ CLASS zcl_gestion_suscrip_rpc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD obtener_activas.
+
+    CLEAR et_suscripciones_activas.
     LOOP AT mt_suscripcion INTO DATA(ls_suscripcion).
       IF ls_suscripcion-estado EQ 'A'.
         APPEND ls_suscripcion TO et_suscripciones_activas.
       ENDIF.
 
-endloop.
+    ENDLOOP.
 
   ENDMETHOD.
 
