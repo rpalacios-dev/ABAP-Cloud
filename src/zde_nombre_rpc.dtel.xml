@@ -13,8 +13,8 @@
     <DDTEXT>Data Element de Nombre</DDTEXT>
     <REPTEXT>La variable &apos;Nombre&apos; contiene:</REPTEXT>
     <SCRTEXT_S>Nom</SCRTEXT_S>
-    <SCRTEXT_M>Nombre</SCRTEXT_M>
-    <SCRTEXT_L>Nombre:</SCRTEXT_L>
+    <SCRTEXT_M>Nombre:</SCRTEXT_M>
+    <SCRTEXT_L>El nombre es:</SCRTEXT_L>
     <DTELMASTER>E</DTELMASTER>
     <REFKIND>D</REFKIND>
     <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>

@@ -5,10 +5,10 @@
 define view entity ZCDS_Union_Ejer_RPC as select from zdb_emplea_rpc
 {
     key correo as Correo,
-    cast( nombre as zde_nombre_rpc) as Nombre
+    nombre as Nombre
 }
 
-union select from ztb_alumnos{
+union select from zdb_alumnos_rpc{
     key cast( '' as abap.char(20)) as Correo,
         nombre as Nombre
 }
