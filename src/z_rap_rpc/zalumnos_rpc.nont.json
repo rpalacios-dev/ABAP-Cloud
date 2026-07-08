@@ -1,0 +1,11 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP Object Node Type ZALUMNOS_RPC",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "name": "ZALUMNOS_RPC",
+  "sapObjectType": "ZALUMNOS_RPC",
+  "rootNode": true
+}
