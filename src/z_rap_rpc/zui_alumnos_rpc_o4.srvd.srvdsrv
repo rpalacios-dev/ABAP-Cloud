@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_ALUMNOS_RPC'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_ALUMNOS_RPC'
+  }
+}
+define service ZUI_ALUMNOS_RPC_O4 provider contracts odata_v4_ui {
+  expose ZC_ALUMNOS_RPC;
+}

@@ -3,20 +3,21 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DD04V>
-    <ROLLNAME>ZDE_SALARY_RPC</ROLLNAME>
+    <ROLLNAME>ZDE_PASSENGER_RPC</ROLLNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
-    <DOMNAME>ZDO_SALARIO_RPC</DOMNAME>
     <HEADLEN>55</HEADLEN>
     <SCRLEN1>10</SCRLEN1>
     <SCRLEN2>20</SCRLEN2>
     <SCRLEN3>40</SCRLEN3>
-    <DDTEXT>Elemento de datos de Salario</DDTEXT>
-    <REPTEXT>La variable &apos;Salario&apos; contiene:</REPTEXT>
-    <SCRTEXT_S>Sal:</SCRTEXT_S>
-    <SCRTEXT_M>Salario:</SCRTEXT_M>
-    <SCRTEXT_L>El salario es:</SCRTEXT_L>
+    <DDTEXT>Nombre de pasajero</DDTEXT>
+    <REPTEXT>Nombre del pasajero</REPTEXT>
+    <SCRTEXT_S>Nombre</SCRTEXT_S>
+    <SCRTEXT_M>Nombre del pasajero</SCRTEXT_M>
+    <SCRTEXT_L>Nombre del pasajero</SCRTEXT_L>
     <DTELMASTER>E</DTELMASTER>
-    <REFKIND>D</REFKIND>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000040</LENG>
+    <OUTPUTLEN>000040</OUTPUTLEN>
     <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
    </DD04V>
   </asx:values>

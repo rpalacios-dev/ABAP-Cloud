@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZR_ALUMNOS_RPC'
+@MappingRole: true
+define role ZR_ALUMNOS_RPC {
+  grant select on ZR_ALUMNOS_RPC
+  where TRUE;
+}

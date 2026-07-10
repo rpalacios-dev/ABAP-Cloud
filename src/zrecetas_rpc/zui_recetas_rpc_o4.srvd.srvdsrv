@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_RECETAS_RPC'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_RECETAS_RPC'
+  }
+}
+define service ZUI_RECETAS_RPC_O4 provider contracts odata_v4_ui {
+  expose ZC_RECETAS_RPC;
+}
